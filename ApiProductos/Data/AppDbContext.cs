@@ -19,9 +19,9 @@ public class AppDbContext : DbContext
             .HasIndex(m => m.Nombre)
             .IsUnique();
 
-        modelBuilder.Entity<Marcas>().Property(m => m.Nombre).IsUnicode(false);
-        modelBuilder.Entity<Producto>().Property(p => p.Nombre).IsUnicode(false);
-        modelBuilder.Entity<Producto>().Property(p => p.Descripcion).IsUnicode(false);
+        modelBuilder.Entity<Marcas>().Property(m => m.Nombre).HasMaxLength(50);
+        modelBuilder.Entity<Producto>().Property(p => p.Nombre).HasMaxLength(50);
+        modelBuilder.Entity<Producto>().Property(p => p.Descripcion).HasMaxLength(100);
 
         modelBuilder.Entity<Producto>()
             .HasOne(p => p.Marca)
