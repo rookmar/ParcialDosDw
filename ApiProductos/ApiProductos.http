@@ -1,0 +1,8 @@
+@ApiProductos_HostAddress = https://localhost:7298
+
+GET {{ApiProductos_HostAddress}}/api/marcas
+Accept: application/json
+
+###
+GET {{ApiProductos_HostAddress}}/api/productos
+Accept: application/json
